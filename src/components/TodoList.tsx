@@ -15,21 +15,25 @@ const TodoList = ({ todos, deleteTodo, startEditTodo }: TodoListProps) => {
   const handleCheckboxChange = () => setIsChecked(!isChecked);
   return (
     <div className="todo-list">
-      {todos.map((todo) => (
-        <>
-          <div key={todo.id} className="todo-item">
-            <Checkbox
-              isChecked={isChecked}
-              handleCheckboxChange={handleCheckboxChange}
-            />
-            {isChecked ? <del>{todo.task}</del> : <span>{todo.task}</span>}
-            <div className="todo-item-btn-box">
-              <FiEdit width={34} onClick={() => startEditTodo(todo)} />
-              <MdDeleteOutline size={24} onClick={() => deleteTodo(todo.id)} />
+      {todos.length > 0 &&
+        todos.map((todo) => (
+          <>
+            <div key={todo.id} className="todo-item">
+              <Checkbox
+                isChecked={isChecked}
+                handleCheckboxChange={handleCheckboxChange}
+              />
+              {isChecked ? <del>{todo.task}</del> : <span>{todo.task}</span>}
+              <div className="todo-item-btn-box">
+                <FiEdit width={34} onClick={() => startEditTodo(todo)} />
+                <MdDeleteOutline
+                  size={24}
+                  onClick={() => deleteTodo(todo.id)}
+                />
+              </div>
             </div>
-          </div>
-        </>
-      ))}
+          </>
+        ))}
     </div>
   );
 };

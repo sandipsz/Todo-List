@@ -3,6 +3,7 @@ import { Todo } from "../App";
 import { useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { MdDeleteOutline } from "react-icons/md";
+import { motion } from "motion/react";
 
 interface TodoListProps {
   todos: Todo[];
@@ -14,7 +15,11 @@ const TodoList = ({ todos, deleteTodo, startEditTodo }: TodoListProps) => {
   const [isChecked, setIsChecked] = useState(false);
   const handleCheckboxChange = () => setIsChecked(!isChecked);
   return (
-    <div className="todo-list">
+    <motion.div
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 3 } }}
+      className="todo-list"
+    >
       {todos.length > 0 &&
         todos.map((todo) => (
           <>
@@ -34,7 +39,7 @@ const TodoList = ({ todos, deleteTodo, startEditTodo }: TodoListProps) => {
             </div>
           </>
         ))}
-    </div>
+    </motion.div>
   );
 };
 

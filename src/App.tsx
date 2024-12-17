@@ -21,7 +21,7 @@ function App() {
       task: inputValue,
       completed: false,
     };
-    setTodos([...todos, newTodo]);
+    setTodos((prevTodos) => [...prevTodos, newTodo]);
     setInputValue("");
   };
 

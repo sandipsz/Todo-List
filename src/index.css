@@ -77,8 +77,9 @@ button:disabled {
 
 .container {
   max-width: 640px;
-  margin: 0 auto;
-  padding: 60px 30px;
+  margin: 2rem auto;
+  padding: 30px 20px;
+  border-radius: 2px;
   box-shadow: 1px 1px 8px #212529;
 }
 
@@ -134,7 +135,7 @@ button:disabled {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
   color: #212529;
@@ -159,14 +160,17 @@ h1 {
   max-width: 640px;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
-  border-radius: 5px;
 }
 
 .todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #c480ff;
+  padding: 1rem;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .todo-item-btn-box {
